@@ -1,0 +1,132 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>pdbonly</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="11.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="QRCoder" Version="1.4.3" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
+        <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
+        <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
+        <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Compile Update="Views\Restaurant\ListViewRestaurants.xaml.cs">
+        <DependentUpon>AdminRestaurantsView.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Restaurant\DataViewRestaurant.xaml.cs">
+        <DependentUpon>RestaurantDataView.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Basic\AdminHomeView.xaml.cs">
+        <DependentUpon>AdminHomeView.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Basic\HomeView.xaml.cs">
+        <DependentUpon>HomeView.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Basic\LegalView.xaml.cs">
+        <DependentUpon>LegalView.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Basic\LoginView.xaml.cs">
+        <DependentUpon>LoginView.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Basic\SingUpView.xaml.cs">
+        <DependentUpon>SingUpView.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\TableV\ListViewTables.xaml.cs">
+        <DependentUpon>ListViewRestaurants.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\CategoryV\DataViewCategory.xaml.cs">
+        <DependentUpon>DataViewTable.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\CategoryV\ListViewCategories.xaml.cs">
+        <DependentUpon>ListViewTables.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\CategoryV\DataViewTable.xaml.cs">
+        <DependentUpon>DataViewTable.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\CategoryV\ListViewTables.xaml.cs">
+        <DependentUpon>ListViewTables.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\ItemV\DataViewItem.xaml.cs">
+        <DependentUpon>DataViewCategory.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\ItemV\ListViewItems.xaml.cs">
+        <DependentUpon>ListViewCategories.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\ItemV\DataViewCategory.xaml.cs">
+        <DependentUpon>DataViewCategory.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\ItemV\ListViewCategories.xaml.cs">
+        <DependentUpon>ListViewCategories.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\UserV\DataViewUser.xaml.cs">
+        <DependentUpon>DataViewTable.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\UserV\ListViewUsers.xaml.cs">
+        <DependentUpon>ListViewTables.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\UserV\DataViewTable.xaml.cs">
+        <DependentUpon>DataViewTable.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\UserV\ListViewTables.xaml.cs">
+        <DependentUpon>ListViewTables.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\OrderV\DataViewOrder.xaml.cs">
+        <DependentUpon>DataViewTable.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\OrderV\ListViewOrder.xaml.cs">
+        <DependentUpon>ListViewTables.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\OrderV\DataViewTable.xaml.cs">
+        <DependentUpon>DataViewTable.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\OrderV\ListViewTables.xaml.cs">
+        <DependentUpon>ListViewTables.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Include="Data">
+        <HintPath>..\..\AsteriskMenuApi\Data\bin\Debug\netstandard2.1\Data.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+</Project>

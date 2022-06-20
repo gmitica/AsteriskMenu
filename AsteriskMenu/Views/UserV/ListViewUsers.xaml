@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.Views.UserV.ListViewUsers"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:userVm="clr-namespace:AsteriskMenu.ViewsModels.UserVM;assembly=AsteriskMenu"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.BackButtonTitle="Lista de usuarios"
+             x:Name="contentPage"
+             >
+    <ContentPage.BindingContext>
+        <userVm:ListViewUsersVM />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView ios:ScrollView.ShouldDelayContentTouches="false">
+            <StackLayout>
+                <ListView ItemsSource="{Binding UserRestaurants}"
+                          RowHeight="75"
+                          SeparatorVisibility="None"
+                          BackgroundColor="Transparent"
+                          HasUnevenRows="False" 
+                          SelectedItem="{Binding SelectedUserRestaurant}"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Desactivar"
+                                              Command="{Binding Source={x:Reference contentPage}, Path=BindingContext.DisableCommand}"
+                                              CommandParameter="{Binding .}"
+                                              IsDestructive="True"
+                                    />
+                                </ViewCell.ContextActions>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" 
+                                           Text="{Binding User.Email}"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="CenterAndExpand"
+                                           FontSize="Title"
+                                           />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button
+                    Text="Crear Usuario"
+                    Command="{Binding ButtonAdd}"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

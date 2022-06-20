@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.Views.OrderV.ListViewOrders"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:tableVm="clr-namespace:AsteriskMenu.ViewsModels.TableVM;assembly=AsteriskMenu"
+             xmlns:orderVm="clr-namespace:AsteriskMenu.ViewsModels.OrderVM;assembly=AsteriskMenu"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.BackButtonTitle="Lista de ordenes"
+             x:Name="contentPage"
+             >
+    <ContentPage.Content>
+        <ScrollView ios:ScrollView.ShouldDelayContentTouches="false">
+            <StackLayout>
+                <Label Text="Sin ordenes" Margin="10" FontSize="Title" IsVisible="{Binding IsWithoutOrders}" HorizontalOptions="CenterAndExpand"></Label>
+                <ListView ItemsSource="{Binding Orders}"
+                          RowHeight="75"
+                          SeparatorVisibility="None"
+                          BackgroundColor="Transparent"
+                          HasUnevenRows="False" 
+                          SelectedItem="{Binding SelectedOrder}"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" 
+                                           Text="{Binding Table.Name}"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="CenterAndExpand"
+                                           FontSize="Title"
+                                           />
+                                    <Label Grid.Row="1" Grid.Column="0" 
+                                           Text="{Binding DateCreated, StringFormat='{0:dd/MM/yyyy HH:mm}'}"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="CenterAndExpand"
+                                           FontSize="Title"
+                                    />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button
+                    Text="Crear orden"
+                    Command="{Binding ButtonAdd}"
+                    IsVisible="{Binding IsVisibleCreate}"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

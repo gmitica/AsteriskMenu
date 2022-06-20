@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{4F2237B7-1E5F-42DF-ADA4-41ACB77A3C9A}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebApi/Services/RestaurantItemCategoryService/RestaurantItemCategoryService.cs">
+    <Files>
+      <File FileName="WebApi/Services/RestaurantItemCategoryService/RestaurantItemCategoryService.cs" Line="19" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AsteriskMenu" expanded="True">
+            <Node name="WebApi" expanded="True">
+              <Node name="Services" expanded="True">
+                <Node name="RestaurantItemCategoryService" expanded="True">
+                  <Node name="RestaurantItemCategoryService.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.WebApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

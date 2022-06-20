@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.Views.RestaurantV.OptionListRestaurant"
+             NavigationPage.BackButtonTitle="Gestión restaurante"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="📝 Ordenes" VerticalOptions="CenterAndExpand"
+                    Style="{StaticResource ButtonAdminPanel}"
+                    Command="{Binding ViewOrders}"
+                    />
+            <Button Text="🪑 Mesas" VerticalOptions="CenterAndExpand"
+                    Style="{StaticResource ButtonAdminPanel}"
+                    Command="{Binding ViewTables}"
+                    />
+            <Button Text="🗂 Categorías" VerticalOptions="CenterAndExpand"
+                    Style="{StaticResource ButtonAdminPanel}"
+                    Command="{Binding ViewCategories}"
+
+                    />
+            <Button Text="🥘 Artículos" VerticalOptions="CenterAndExpand"
+                    Style="{StaticResource ButtonAdminPanel}"
+                    Command="{Binding ViewItems}"
+                    />
+            <Button Text="🧑🏻 Usuarios" VerticalOptions="CenterAndExpand"
+                    Style="{StaticResource ButtonAdminPanel}"
+                    Command="{Binding ViewUsers}"
+                    />
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

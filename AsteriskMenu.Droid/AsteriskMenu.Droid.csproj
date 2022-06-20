@@ -1,0 +1,137 @@
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{004B4443-580E-4512-AD1F-A3DDD43A14FD}</ProjectGuid>
+        <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
+        <RootNamespace>AsteriskMenu.Droid</RootNamespace>
+        <AssemblyName>AsteriskMenu.Droid</AssemblyName>
+        <AndroidApplication>True</AndroidApplication>
+        <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+        <AndroidResgenClass>Resource</AndroidResgenClass>
+        <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+        <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+        <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+        <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+        <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidLinkMode>None</AndroidLinkMode>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidManagedSymbols>true</AndroidManagedSymbols>
+        <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Mono.Android" />
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
+        <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
+        <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
+        <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="MainActivity.cs" />
+        <Compile Include="Resources\Resource.Designer.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Resources\AboutResources.txt" />
+        <None Include="Assets\AboutAssets.txt" />
+        <None Include="Properties\AndroidManifest.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <AndroidResource Include="Resources\drawable-hdpi\category.png" />
+        <AndroidResource Include="Resources\drawable-hdpi\item.png" />
+        <AndroidResource Include="Resources\drawable-hdpi\order.png" />
+        <AndroidResource Include="Resources\drawable-hdpi\qr_code.png" />
+        <AndroidResource Include="Resources\drawable-hdpi\qr_code_white.png" />
+        <AndroidResource Include="Resources\drawable-hdpi\restaurant.png" />
+        <AndroidResource Include="Resources\drawable-hdpi\waiter.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\category.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\item.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\order.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\qr_code.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\qr_code_white.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\restaurant.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\waiter.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\category.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\item.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\order.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\qr_code.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\qr_code_white.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\restaurant.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\waiter.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\category.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\item.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\order.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\qr_code.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\qr_code_white.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\restaurant.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\waiter.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\category.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\item.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\order.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\qr_code.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\qr_code_white.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\restaurant.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\waiter.png" />
+        <AndroidResource Include="Resources\drawable\category.png" />
+        <AndroidResource Include="Resources\drawable\item.png">
+          <SubType>Designer</SubType>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\logo.png" />
+        <AndroidResource Include="Resources\drawable\ic_launcher.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\order.png" />
+        <AndroidResource Include="Resources\drawable\qr_code.png">
+          <SubType>Designer</SubType>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\qr_code_white.png">
+          <SubType>Designer</SubType>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\restaurant.png" />
+        <AndroidResource Include="Resources\drawable\waiter.png" />
+        <AndroidResource Include="Resources\layout\Tabbar.axml" />
+        <AndroidResource Include="Resources\layout\Toolbar.axml" />
+        <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+        <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+        <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+        <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+        <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+        <AndroidResource Include="Resources\values\styles.xml" />
+        <AndroidResource Include="Resources\values\colors.xml" />
+        <AndroidResource Include="Resources\xml\file_paths.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\AsteriskMenu\AsteriskMenu.csproj">
+            <Project>{D14F0DFF-F506-49F6-8751-E183AEE7809E}</Project>
+            <Name>AsteriskMenu</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>

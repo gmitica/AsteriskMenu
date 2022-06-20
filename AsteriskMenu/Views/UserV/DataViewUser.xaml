@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.Views.UserV.DataViewUser"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             NavigationPage.BackButtonTitle="Usuario">
+    <ContentPage.Content>
+        <ScrollView Margin="10" ios:ScrollView.ShouldDelayContentTouches="false">
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                    <Label 
+                        Text="Nombre"
+                        Grid.Row="0"
+                        Grid.Column="0" 
+                        Style="{StaticResource FirstColumn}"/>
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding User.FirstName}"
+                        Placeholder="Nombre"
+                    />
+                    
+                    <Label 
+                        Text="Apellidos"
+                        Grid.Row="1"
+                        Grid.Column="0" 
+                        Style="{StaticResource FirstColumn}"/>
+                    <Entry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="{Binding User.LastName}"
+                        Placeholder="Apellidos"
+                    />
+                    
+                    <Label 
+                        Text="Correo empleado"
+                        Grid.Row="2"
+                        Grid.Column="0" 
+                        Style="{StaticResource FirstColumn}"/>
+                    <Entry
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Text="{Binding User.Email}"
+                        Placeholder="Correo empleado"
+                    />
+                    
+                    <Label 
+                        Text="Contraseña"
+                        Grid.Row="3"
+                        Grid.Column="0" 
+                        Style="{StaticResource FirstColumn}"/>
+                    <Entry
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Text="{Binding User.Password}"
+                        Placeholder="Contraseña"
+                    />
+                    
+                    <Label Text="Activo" Grid.Row="4" Grid.Column="0" Style="{StaticResource FirstColumn}"/>
+                    <Switch
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        IsToggled="{Binding User.isActive}" 
+                    />
+                    <Label Text="{Binding Message}" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource FirstColumn}"/>
+
+                    
+                    
+                </Grid>
+                <Button Text="{Binding TextAddUpdate}" VerticalOptions="EndAndExpand" Command="{Binding ButtonCreate}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

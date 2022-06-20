@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.Views.CategoryV.DataViewCategory"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             NavigationPage.BackButtonTitle="Categoría">
+    <ContentPage.Content>
+        <ScrollView Margin="10" ios:ScrollView.ShouldDelayContentTouches="false">
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        Text="Nombre"
+                        Grid.Row="0"
+                        Grid.Column="0" 
+                        Style="{StaticResource FirstColumn}"/>
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding Category.DisplayName}"
+                        Placeholder="Nombre de la categoría"
+                    />
+                    <Label 
+                        Text="Descripción"
+                        Grid.Row="1"
+                        Grid.Column="0" 
+                        Style="{StaticResource FirstColumn}"/>
+                    <Frame Grid.Row="1"
+                           Grid.Column="1"  BorderColor="LightGray" HasShadow="False" Padding="0">
+                        <Editor Placeholder="Descripción"
+                                Text="{Binding Category.Description}"
+                        />
+                    </Frame>
+                    <Label Text="Activa" Grid.Row="2" Grid.Column="0" Style="{StaticResource FirstColumn}"/>
+                    <Switch
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        IsToggled="{Binding Category.Active}" 
+                        />
+                </Grid>
+                <Button Text="{Binding TextAddUpdate}" VerticalOptions="EndAndExpand" Command="{Binding ButtonCreate}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

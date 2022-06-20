@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="AsteriskMenu.Views.Basic.LoginView"
+             NavigationPage.BackButtonTitle="Iniciar sesión"
+             >
+    <ContentPage.Content>
+        <ScrollView Margin="10">
+            <StackLayout>
+                <Label Text="INICIAR SESIÓN" 
+                       FontSize="Subtitle" 
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0, 10, 0, 30"
+                       FontAttributes="Bold"
+                       TextDecorations="Underline"
+                />
+                
+                <Grid RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" /> 
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                       <ColumnDefinition Width="100"/>
+                       <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                   
+                   
+                   
+                   <Label
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Correo"
+                       Style="{StaticResource FirstColumn}"
+                   />
+                   <Entry
+                       x:Name="Email"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Placeholder="ejemplo@dominio.com"
+                       Keyboard="Email"
+                       Text="{Binding Email}"
+                   />
+                   
+                   <Label
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Text="Contraseña"
+                       Style="{StaticResource FirstColumn}"
+                   />
+                   <Entry
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Placeholder="Contraseña"
+                       IsPassword="True"
+                       Text="{Binding Password}"
+                   />
+                  
+                   <CheckBox 
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       IsChecked="{Binding AceptTerms}"
+                       ></CheckBox>
+                   
+                        <Label
+                            Grid.Row="2" 
+                            Grid.Column="1" 
+                            Text="He leído, entendido y acepto las políticas de acceso y uso de la aplicación. Para ver, hacer click aquí."
+                            FontSize="Small">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ClickedLegal}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                   
+                   
+                            
+
+                   <Button
+                       Grid.Row="3" 
+                       Grid.ColumnSpan="2"
+                       Text="ENTRAR" 
+                       Command="{Binding ClickedLogIn}"
+                   />
+                   
+                   <Label
+                       Grid.Row="4"
+                       Grid.ColumnSpan="2"
+                       Text="{Binding Message}"
+                       TextColor="Red"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+                   
+               </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

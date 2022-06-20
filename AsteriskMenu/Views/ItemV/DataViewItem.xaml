@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.Views.ItemV.DataViewItem"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             NavigationPage.BackButtonTitle="Artículo">
+    <ContentPage.Content>
+        <ScrollView Margin="10" ios:ScrollView.ShouldDelayContentTouches="false">
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        Text="Nombre"
+                        Grid.Row="0"
+                        Grid.Column="0" 
+                        Style="{StaticResource FirstColumn}"/>
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding Item.Name}"
+                        Placeholder="Nombre de la artículo"
+                    />
+                    <Label 
+                        Text="Descripción"
+                        Grid.Row="1"
+                        Grid.Column="0" 
+                        Style="{StaticResource FirstColumn}"/>
+                    <Frame Grid.Row="1"
+                           Grid.Column="1"  BorderColor="LightGray" HasShadow="False" Padding="0">
+                        <Editor Placeholder="Descripción"
+                                Text="{Binding Item.Description}"
+                        />
+                    </Frame>
+                    <Label Text="Activa" Grid.Row="2" Grid.Column="0" Style="{StaticResource FirstColumn}"/>
+                    <Switch
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        IsToggled="{Binding Item.Active}" 
+                        />
+                    
+                    <Label Text="Precio" Grid.Row="3" Grid.Column="0" Style="{StaticResource FirstColumn}"/>
+                    <Entry
+                        Keyboard="Numeric"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Text="{Binding Item.Price}"
+                    />
+                    
+                    
+                    <Label Grid.Row="4" Grid.Column="0" Text="Categorías asociadas" Style="{StaticResource FirstColumn}"/>
+                    <ListView Grid.Row="4" Grid.Column="1"  ItemsSource="{Binding CategoryList}" Margin="20, 5, 20, 5" SelectionMode="None"
+                                          SeparatorVisibility="None">
+                        <ListView.ItemTemplate> 
+                            <DataTemplate> 
+                                <ViewCell> 
+                                    <Grid> 
+                                        <Grid.ColumnDefinitions> 
+                                            <ColumnDefinition Width="*" /> 
+                                            <ColumnDefinition Width="Auto" /> 
+                                        </Grid.ColumnDefinitions> 
+                                        <Label Text="{Binding Category.DisplayName}"
+                                               VerticalOptions="CenterAndExpand"
+                                        />
+                                        <Switch IsToggled="{Binding Active, Mode=TwoWay}" Grid.Column="1"/>
+                                    </Grid> 
+                                </ViewCell> 
+                            </DataTemplate> 
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
+                    
+                    <Label Grid.Row="5"
+                           Grid.Column="0"
+                           Text="Imagen"
+                           Style="{StaticResource FirstColumn}"
+                    />
+                    
+                    <Frame Grid.Row="5"
+                           Grid.Column="1"  BorderColor="LightGray" HasShadow="False" Padding="0">
+                          
+                        <Button
+                            Text="Seleccionar imagen"
+                            Command="{Binding PickImageCommand}"
+                        />
+                    </Frame>
+                </Grid>
+                <Frame BorderColor="LightGray" HasShadow="False" Padding="0" BackgroundColor="LightGray">
+                    <Image Source="{Binding Image}"/>
+                </Frame>
+                
+                
+                
+                
+                <Button Text="{Binding TextAddUpdate}" VerticalOptions="EndAndExpand" Command="{Binding ButtonCreate}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

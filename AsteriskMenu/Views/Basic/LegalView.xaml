@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="AsteriskMenu.Views.Basic.LegalView"
+             NavigationPage.BackButtonTitle="Legal"
+             >
+    <ContentPage.Content>
+        <ScrollView Margin="10">
+            <StackLayout>
+              <Label Text="LEGAL" 
+                               FontSize="Title" 
+                               HorizontalOptions="CenterAndExpand"
+                               Margin="0, 10, 0, 30"
+                               FontAttributes="Bold"
+                               TextDecorations="Underline"
+                               />
+              <Label Text="AVISO LEGAL Y CONDICIONES GENERALES DE USO" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" FontAttributes="Bold"/>
+              <Label Text="I. INFORMACIÓN GENERAL" FontAttributes="Bold"/>
+              <Label Text="En cumplimiento con el deber de información dispuesto en la Ley 34/2002 de Servicios de la Sociedad de la Información y el Comercio Electrónico (LSSI-CE) de 11 de julio, se facilitan a continuación los siguientes datos de información general de esta app:"/>
+              <Label Text="La titularidad de esta app, asteriskmenu.com, (en adelante, APP) la ostenta: George Mitica, con NIF: 00000000A, y cuyos datos de contacto son:"></Label>
+              <Label Text="Dirección: Calle ejemplo"/>
+              <Label Text="Teléfono de contacto: 123456789"/>
+              <Label Text="Email de contacto: legal@asteriskmenu.com"/>
+              <Label Text="II. TÉRMINOS Y CONDICIONES GENERALES DE USO" FontAttributes="Bold"/>
+              <Label Text="El objeto de las condiciones: La APP" FontAttributes="Bold"/>
+              <Label Text="El objeto de las presentes Condiciones Generales de Uso (en adelante, Condiciones) es regular el acceso y la utilización de la APP. A los efectos de las presentes Condiciones se entenderá como APP: la apariencia externa de los interfaces de pantalla, tanto de forma estática como de forma dinámica, es decir, el árbol de navegación; y todos los elementos integrados tanto en los interfaces de pantalla como en el árbol de navegación (en adelante, Contenidos) y todos aquellos servicios o recursos en línea que en su caso ofrezca a los Usuarios (en adelante, Servicios). AsteriskMenu se reserva la facultad de modificar, en cualquier momento, y sin aviso previo, la presentación y configuración de la APP y de los Contenidos y Servicios que en él pudieran estar incorporados. El Usuario reconoce y acepta que en cualquier momento AsteriskMenu pueda interrumpir, desactivar y/o cancelar cualquiera de estos elementos que se integran en la APP o el acceso a los mismos. El acceso al APP por el Usuario tiene carácter libre y, por regla general, es gratuito sin que el Usuario tenga que proporcionar una contraprestación para poder disfrutar de ello, salvo en lo relativo al coste de conexión a través de la red de telecomunicaciones suministrada por el proveedor de acceso que hubiere contratado el Usuario. La utilización de alguno de los Contenidos o Servicios de la APP podrá hacerse mediante la suscripción o registro previo del Usuario."/>
+              <Label Text="El Usuario" FontAttributes="Bold"/>
+              <Label Text="El acceso, la navegación y uso de la APP, confiere la condición de Usuario, por lo que se aceptan, desde que se inicia la navegación por la APP, todas las Condiciones aquí establecidas, así como sus ulteriores modificaciones, sin perjuicio de la aplicación de la correspondiente normativa legal de obligado cumplimiento según el caso. Dada la relevancia de lo anterior, se recomienda al Usuario leerlas cada vez que visite la APP.
+
+La APP de AsteriskMenu proporciona gran diversidad de información, servicios y datos. El Usuario asume su responsabilidad para realizar un uso correcto de la APP. Esta responsabilidad se extenderá a:
+
+Un uso de la información, Contenidos y/o Servicios y datos ofrecidos por AsteriskMenu sin que sea contrario a lo dispuesto por las presentes Condiciones, la Ley, la moral o el orden público, o que de cualquier otro modo puedan suponer lesión de los derechos de terceros o del mismo funcionamiento de la APP.
+La veracidad y licitud de las informaciones aportadas por el Usuario en los formularios extendidos por AsteriskMenu para el acceso a ciertos Contenidos o Servicios ofrecidos por la APP. En todo caso, el Usuario notificará de forma inmediata a AsteriskMenu acerca de cualquier hecho que permita el uso indebido de la información registrada en dichos formularios, tales como, pero no solo, el robo, extravío, o el acceso no autorizado a identificadores y/o contraseñas, con el fin de proceder a su inmediata cancelación.
+El mero acceso a esta APP no supone entablar ningún tipo de relación de carácter comercial entre AsteriskMenu y el Usuario.
+
+Siempre en el respeto de la legislación vigente, esta APP de AsteriskMenu se dirige a todas las personas, sin importar su edad, que puedan acceder y/o navegar por las páginas de la APP." />
+              <Label FontAttributes="Bold" Text="III. ACCESO Y NAVEGACIÓN EN LA APP: EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD"/>
+              <Label Text="AsteriskMenu no garantiza la continuidad, disponibilidad y utilidad de la APP, ni de los Contenidos o Servicios. AsteriskMenu hará todo lo posible por el buen funcionamiento de la APP, sin embargo, no se responsabiliza ni garantiza que el acceso a esta APP no vaya a ser ininterrumpido o que esté libre de error."/>
+              <Label Text="Tampoco se responsabiliza o garantiza que el contenido o software al que pueda accederse a través de esta APP, esté libre de error o cause un daño al sistema informático (software y hardware) del Usuario. En ningún caso AsteriskMenu será responsable por las pérdidas, daños o perjuicios de cualquier tipo que surjan por el acceso, navegación y el uso de la APP, incluyéndose, pero no limitándose, a los ocasionados a los sistemas informáticos o los provocados por la introducción de virus."/>
+              <Label Text="AsteriskMenu tampoco se hace responsable de los daños que pudiesen ocasionarse a los usuarios por un uso inadecuado de esta APP. En particular, no se hace responsable en modo alguno de las caídas, interrupciones, falta o defecto de las telecomunicaciones que pudieran ocurrir."/>
+              <Label Text="IV. PROPIEDAD INTELECTUAL E INDUSTRIAL" FontAttributes="Bold"/>
+              <Label Text="AsteriskMenu por sí o como parte cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de la APP, así como de los elementos contenidos en el mismo (a título enunciativo y no exhaustivo, imágenes, sonido, audio, vídeo, software o textos, marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.). Serán, por consiguiente, obras protegidas como propiedad intelectual por el ordenamiento jurídico español, siéndoles aplicables tanto la normativa española y comunitaria en este campo, como los tratados internacionales relativos a la materia y suscritos por España."/>
+              <Label Text="Todos los derechos reservados. En virtud de lo dispuesto en la Ley de Propiedad Intelectual, quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta app, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de AsteriskMenu."/>
+              <Label Text="El Usuario se compromete a respetar los derechos de propiedad intelectual e industrial de AsteriskMenu. Podrá visualizar los elementos de la APP o incluso imprimirlos, copiarlos y almacenarlos en el disco duro de su ordenador o en cualquier otro soporte físico siempre y cuando sea, exclusivamente, para su uso personal. El Usuario, sin embargo, no podrá suprimir, alterar, o manipular cualquier dispositivo de protección o sistema de seguridad que estuviera instalado en la APP."/>
+              <Label Text="En caso de que el Usuario o tercero considere que cualquiera de los Contenidos de la APP suponga una violación de los derechos de protección de la propiedad intelectual, deberá comunicarlo inmediatamente a AsteriskMenu a través de los datos de contacto del apartado de INFORMACIÓN GENERAL de este Aviso Legal y Condiciones Generales de Uso."/>
+              <Label Text="V. ACCIONES LEGALES, LEGISLACIÓN APLICABLE Y JURISDICCIÓN" FontAttributes="Bold"/>
+              <Label Text="AsteriskMenu se reserva la facultad de presentar las acciones civiles o penales que considere necesarias por la utilización indebida de la APP y Contenidos, o por el incumplimiento de las presentes Condiciones."/>
+              <Label Text="La relación entre el Usuario y AsteriskMenu se regirá por la normativa vigente y de aplicación en el territorio español. De surgir cualquier controversia en relación con la interpretación y/o a la aplicación de estas Condiciones las partes someterán sus conflictos a la jurisdicción ordinaria sometiéndose a los jueces y tribunales que correspondan conforme a derecho."/>
+              <Label Text="Este documento de Aviso Legal y Condiciones Generales de uso de la app ha sido creado el día 01/06/2022."/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

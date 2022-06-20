@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.Views.Basic.AdminHomeView"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             NavigationPage.BackButtonTitle="Inicio Admin">
+    <ContentPage.Content>
+        <ScrollView Margin="10" ios:ScrollView.ShouldDelayContentTouches="false">
+            <StackLayout>
+                <Label
+                    Text="{Binding WelcomeMessage}"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="Title"
+                    />
+                
+                <Button Text="🍽 Restaurantes"
+                        Style="{StaticResource ButtonAdminPanel}"
+                        IsVisible="{Binding IsVisibleRestaurants}"
+                        Command="{Binding ClickRestaurant}"/>
+             
+                <Button Text="📝 Ordenes activas"
+                        Style="{StaticResource ButtonAdminPanel}"
+                        Command="{Binding ClickOrders}"/>
+
+                <Button
+                    Text="Cerrar Sesión"
+                    Command="{Binding ClickedButtonLogout}"
+                    VerticalOptions="EndAndExpand"
+                />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

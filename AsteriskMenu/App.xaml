@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.App">
+    <Application.Resources>
+        <x:String x:Key="DefaultErrorMessage">Error, vuelva a intentarlo más tarde</x:String>
+        <x:String x:Key="WebApiDomain">https://asteriskmenu.azurewebsites.net</x:String>
+        <x:String x:Key="UsersSignUp">/Api/Users/Add</x:String>
+        <x:String x:Key="UsersLogIn">/Api/Users/Authenticate</x:String>
+        <x:String x:Key="UsersLogOut">/Api/Users/Token/Revoke</x:String>
+        <x:String x:Key="UsersRefreshToken">/Api/Users/Token/Refresh</x:String>
+        <x:String x:Key="UsersGetAllUsers">/Api/Users</x:String>
+        
+        <x:String x:Key="CountriesGetAll">/Api/Location/Countries</x:String>
+        <x:String x:Key="StatesGetAll">/Api/Location/States</x:String>
+        <x:String x:Key="CitiesGetAll">/Api/Location/Cities</x:String>
+        
+        <x:String x:Key="RestaurantAdd"></x:String>
+        <x:String x:Key="RestaurantGetAll">/Api/Restaurant/GetAll</x:String>
+
+        
+        <OnPlatform 
+            x:Key="PageBackgroundColor"
+            x:TypeArguments="Color"
+            Android="White"/>
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
+        </Style>
+        <Style x:Key="ButtonAdminPanel" TargetType="Button">
+            <Setter Property="FontSize" Value="40"/> 
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        </Style>
+        
+        
+        <OnPlatform 
+            x:Key="TextColorBlack"
+            x:TypeArguments="Color"
+            Android="Black"/>
+        <Style TargetType="Label" ApplyToDerivedTypes="True">
+            <Setter Property="TextColor" Value="{StaticResource TextColorBlack}" />
+        </Style>
+        
+        
+        <Style x:Key="FirstColumn" TargetType="Label">
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        </Style>
+        
+        
+         <OnPlatform 
+            x:Key="PrimaryColor"
+            x:TypeArguments="Color"
+            Android="#fffafafa"/>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="CornerRadius" Value="3" />
+        </Style>
+        
+        
+        <Style x:Key="LabelTextBlack" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}"/> 
+        </Style>
+        
+    </Application.Resources>
+</Application>

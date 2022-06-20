@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteriskMenu.Views.RestaurantV.ListViewRestaurants"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:helpers="clr-namespace:AsteriskMenu.Helpers;assembly=AsteriskMenu"
+             xmlns:restaurantVm="clr-namespace:AsteriskMenu.ViewsModels.RestaurantVM;assembly=AsteriskMenu"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.BackButtonTitle="Lista de restaurantes"
+             x:Name="contentPage"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:BytesToImageSourceConverter x:Key="BytesToImageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <restaurantVm:ListViewRestaurantsVM />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView ios:ScrollView.ShouldDelayContentTouches="false">
+            <StackLayout>
+                <ListView ItemsSource="{Binding Restaurants}"
+                          RowHeight="75"
+                          SeparatorVisibility="None"
+                          BackgroundColor="Transparent"
+                          HasUnevenRows="False" 
+                          SelectedItem="{Binding SelectedRestaurant}"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Modificar"
+                                              Command="{Binding Source={x:Reference contentPage}, Path=BindingContext.ModifyCommand}"
+                                              CommandParameter="{Binding .}"
+                                    />
+                                    <MenuItem Text="Eliminar"
+                                              Command="{Binding Source={x:Reference contentPage}, Path=BindingContext.DeleteCommand}"
+                                              CommandParameter="{Binding .}"
+                                              IsDestructive="True"
+                                    />
+                                </ViewCell.ContextActions>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="75"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0"  Grid.Column="0" Grid.RowSpan="2">
+                                        <Image VerticalOptions="CenterAndExpand" 
+                                               Source="{Binding Image, Converter={StaticResource BytesToImageSourceConverter}}"
+                                               HeightRequest="50" 
+                                               WidthRequest="50"
+                                               HorizontalOptions="Start"
+                                               />
+                                    </StackLayout>
+                                    <Label Grid.Row="0" Grid.Column="1" 
+                                           Text="{Binding Name}"
+                                           HorizontalOptions="StartAndExpand"
+                                           VerticalOptions="StartAndExpand"
+                                           FontSize="Title"
+                                           />
+                                    <Label Grid.Row="1" Grid.Column="1" 
+                                           Text="{Binding Address}"
+                                           HorizontalOptions="StartAndExpand"
+                                           TextColor="Gray"
+                                           VerticalOptions="EndAndExpand"
+                                           />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button
+                    Text="Crear restaurante"
+                    Command="{Binding ButtonRestaurantAdd}"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
